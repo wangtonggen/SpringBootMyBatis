@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <resultMap id="UserResult" type="user">
+        <result column="user_id" property="user_id"/>
+        <result column="user_account" property="user_account"/>
+        <result column="user_pwd" property="user_pwd"/>
+        <result column="user_birthday" property="user_birthday"
+                typeHandler="com.example.demo.handler.Date2StringHandler"/>
+    </resultMap>
+    <select id="login" resultMap="UserResult">
+        select * from t_user t where t.user_account = #{account} and t.user_pwd = #{pwd}
+    </select>
+
+    <select id="queryUserById" resultMap="UserResult">
+        select * from t_user t where t.user_id = #{userId}
+    </select>
+
+    <!--根据账号查询用户-->
+        <select id="queryUserByAccount" resultMap="UserResult">
+            select * from t_user t where t.user_account = #{account}
+        </select>
+    <!--插入数据-->
+    <insert id="insertUser" parameterType="user">
+        insert into t_user(user_account,user_pwd,user_birthday) values(#{user_account},#{user_pwd},#{user_birthday})
+    </insert>
+</mapper>
