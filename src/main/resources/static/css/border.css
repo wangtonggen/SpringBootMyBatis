@@ -1,0 +1,13 @@
+
+.box_relative {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    width: 200px;
+    height: 200px;
+    border: 2px black solid;
+}
+
+/*.hello .border{*/
+/*    border: 2px #00FF00 solid;*/
+/*}*/
