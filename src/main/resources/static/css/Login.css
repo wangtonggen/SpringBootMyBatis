@@ -7,16 +7,11 @@
 }
 
 .divCenter{
-    width: 50%;
-    height: 50%;
-    border: 1px #00FF00 solid;
-    position: absolute;
+    width: 40%;
+    height: 40%;
+    margin-top: 150px;
+    border: 1px #8D8D8D solid;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
 }

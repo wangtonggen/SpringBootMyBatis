@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>登录</title>
     <link rel="alternate icon" href="image/admin.png"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
     <link rel="stylesheet" type="text/css" href="css/Login.css"/>
     <link rel="stylesheet" type="text/css" href="css/layui/css/layui.css"/>
     <script rel="stylesheet" src="js/jquery-3.4.1.min.js"></script>
@@ -14,14 +15,13 @@
 
 </head>
 <body>
-<div style="width: 100%;height: 100%">
     <div class="divCenter">
-        <div>
+        <div style="text-align: center;width: 60%">
             <div class="layui-form-item">
                 <label class="layui-form-label">账号</label>
                 <div class="layui-input-block">
                     <input id="account" type="text" name="username"
-                           placeholder="请输入" autocomplete="off" class="layui-input">
+                           placeholder="请输入账号" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <br>
@@ -29,14 +29,12 @@
                 <label class="layui-form-label">密码</label>
                 <div class="layui-input-block">
                     <input id="password" type="password" name="username"
-                           placeholder="请输入" autocomplete="off" class="layui-input">
+                           placeholder="请输入密码" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <br>
-            <button id="btn_login" type="button" class="layui-btn" style="margin-top: 20px">百搭按钮</button>
-            <p id="show_account" style="color: black">word</p>
+            <button id="btn_login" type="button" class="layui-btn">百搭按钮</button>
         </div>
     </div>
-</div>
 </body>
 </html>
