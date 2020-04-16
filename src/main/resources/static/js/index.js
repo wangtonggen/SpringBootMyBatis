@@ -26,6 +26,12 @@ $(function () {
     });
 });
 
+/**
+ * 登录操作
+ * @param account 账号
+ * @param password 密码
+ * @param callback 回调
+ */
 function login(account, password, callback) {
     $.post('/login', {
         account: account,
