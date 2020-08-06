@@ -98,21 +98,15 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
      * @param msg 状态描述
      */
     private void returnJson(HttpServletResponse response,int code,String msg){
-        BaseBean baseBean = new BaseBean();
-        PrintWriter writer = null;
+        BaseBean<String> baseBean = new BaseBean<>();
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
-        try {
-            writer = response.getWriter();
+        try (PrintWriter writer = response.getWriter()) {
             baseBean.setCode(code);
             baseBean.setMsg(msg);
             writer.print(JSON.toJSONString(baseBean));
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if(writer != null){
-                writer.close();
-            }
         }
     }
 }

@@ -15,6 +15,9 @@ public class User {
     public String user_birthday;
     private String token;
 
+    private String userName;
+    private String msg;
+
     public int getUser_id() {
         return user_id;
     }
@@ -53,5 +56,21 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

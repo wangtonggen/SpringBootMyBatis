@@ -15,9 +15,10 @@ $(function () {
         showLoading("加载中...", 2, 0.1);
         login(account,password,function (data, status) {
             if (data.code === 1) {
-                let account = data.data.user_account;
+                // let account = data.data.user_account;
                 showToast("登录成功");
-                $("#show_account").text(account);
+                $(window).attr('location',getRootPath()+'/main.html?token='+12345678);
+                // $("#show_account").text(account);
             } else {
                 showToast("登录失败");
             }

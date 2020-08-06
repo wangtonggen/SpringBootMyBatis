@@ -7,20 +7,25 @@
  * @param callback 回调
  */
 function login(account, password, callback) {
-    $.post('/login', {
+    $.post(getRootPath()+'/login', {
         account: account,
         password: password
     }, callback, "json");
 }
 
-
-function updateUserInfo(User,callback) {
+/**
+ * 更新信息
+ * @param user 用户信息
+ * @param callback 回调
+ */
+function updateUserInfo(user,callback) {
 
 }
 
 /**
  * 退出登录
  * @param account 账号
+ * @param callback 回调
  */
 function logout(account,callback) {
 

@@ -25,8 +25,6 @@ public class TokenUtils {
      */
     public static String getToken(User user) {
         Date date = new Date(System.currentTimeMillis()+EXPIRE_TIME);
-        String token="";
-        token= JWT.create().withAudience(String.valueOf(user.getUser_id())).withExpiresAt(date).sign(Algorithm.HMAC256(user.getUser_pwd()));
-        return token;
+        return JWT.create().withAudience(String.valueOf(user.getUser_id())).withExpiresAt(date).sign(Algorithm.HMAC256(user.getUser_pwd()));
     }
 }

@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.annotate.PassToken;
-import com.example.demo.annotate.UserLoginToken;
 import com.example.demo.pojo.BaseBean;
 import com.example.demo.pojo.User;
 import com.example.demo.service.UserService;
@@ -28,9 +27,15 @@ public class UserController {
     @ResponseBody
     @PassToken
     private BaseBean<User> login(String account, String password) {
-        User user = userService.login(account, password);
+//        User user = userService.login(account, password);
         BaseBean<User> baseBean = new BaseBean<>();
-        if (user == null) {
+        baseBean.setCode(1);
+        baseBean.setMsg("成功");
+        User user = new User();
+        user.setUserName(account);
+        user.setMsg(password);
+        baseBean.setData(user);
+       /* if (user == null) {
             baseBean.setCode(-1);
             baseBean.setMsg("用户不存在");
         } else {
@@ -38,7 +43,7 @@ public class UserController {
             baseBean.setCode(1);
             user.setToken(TokenUtils.getToken(user));
         }
-        baseBean.setData(user);
+        baseBean.setData(user);*/
         return baseBean;
     }
 
@@ -56,6 +61,7 @@ public class UserController {
             user.setUser_account(account);
             user.setUser_pwd(password);
             user.setUser_birthday(birthday);
+            user.setToken(TokenUtils.getToken(user));
             if (userService.insertUser(user)) {
                 baseBean.setCode(1);
                 baseBean.setData("成功");

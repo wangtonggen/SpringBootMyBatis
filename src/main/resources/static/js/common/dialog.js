@@ -1,5 +1,5 @@
 
-
+var dialog;
 /**
  * 显示loading
  * @param message
@@ -7,7 +7,7 @@
  * @param shade
  */
 function showLoading(message,icon,shade) {
-    layer.load(message,{
+    dialog = layer.load(message,{
         icon:icon,
         shade:shade
     })
